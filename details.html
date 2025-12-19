@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINGsCARS | Vehicle Intelligence Details</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .details-hero {
+            padding: var(--space-21) 0;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-13);
+        }
+
+        .spec-item {
+            padding: var(--space-8);
+            background: var(--clr-surface-1);
+            border-radius: var(--radius-fluid);
+            border: var(--border-thin);
+        }
+    </style>
+</head>
+
+<body data-theme="dark">
+    <nav class="nav-shell scrolled" id="main-nav">
+        <div class="container nav-body">
+            <a href="index.html" class="nav-brand">
+                LINGsCARS
+            </a>
+            <div class="nav-items">
+                <a href="personal.html" class="nav-link">Personal</a>
+                <a href="business.html" class="nav-link">Business</a>
+                <a href="vans.html" class="nav-link">Vans</a>
+                <a href="bmw.html" class="nav-link">BMW</a>
+            </div>
+            <div class="nav-interaction" style="display: flex; align-items: center; gap: var(--space-5);">
+                <button id="theme-toggle" class="nav-link"
+                    style="background: none; border: 1px solid rgba(255,255,255,0.2); padding: var(--space-1) var(--space-3); border-radius: 100px; cursor: pointer; color: var(--clr-text-main); font-size: 1.2rem; transition: var(--base-transition);">
+                    <span id="theme-icon">🔆</span>
+                </button>
+                <a href="tel:01914609444" class="nav-link" style="color: var(--clr-primary); font-weight: 800;">0191 460
+                    9444</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="details-hero">
+            <div class="container reveal active">
+                <div
+                    style="display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-13); align-items: center;">
+                    <div id="car-image-container">
+                        <img src="" id="detail-image" alt="Car Visual"
+                            style="width: 100%; border-radius: var(--radius-fluid); box-shadow: 0 40px 100px rgba(0,0,0,0.3);">
+                    </div>
+                    <div>
+                        <span class="badge-intro">Exclusive Engagement</span>
+                        <h1 id="detail-title">Vehicle Title</h1>
+                        <p id="detail-desc" style="margin: var(--space-5) 0;">Loading technical specifications and
+                            availability...</p>
+                        <div style="margin-top: var(--space-8);">
+                            <div class="price-v2" id="detail-price">£--</div>
+                            <span class="period-v2">per month inc. VAT</span>
+                        </div>
+                        <button class="btn-nexus" style="margin-top: var(--space-8); padding: 1.25rem 3rem;">Inquire
+                            Now</button>
+                    </div>
+                </div>
+
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <span class="input-label">Engine</span>
+                        <div style="font-weight: 700; font-size: 1.25rem;">2.0L Turbo / EV</div>
+                    </div>
+                    <div class="spec-item">
+                        <span class="input-label">Transmission</span>
+                        <div style="font-weight: 700; font-size: 1.25rem;">Automatic</div>
+                    </div>
+                    <div class="spec-item">
+                        <span class="input-label">Availability</span>
+                        <div style="font-weight: 700; font-size: 1.25rem;">In Stock</div>
+                    </div>
+                    <div class="spec-item">
+                        <span class="input-label">Color</span>
+                        <div style="font-weight: 700; font-size: 1.25rem;">Metallic Gray / Blue</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const car = params.get('car');
+
+            const data = {
+                'vw': { title: 'Volkswagen T-ROC', price: '£299', img: 'images/car_33.jpg', desc: 'The T-ROC combines the presence of an SUV with the agility of a compact hatchback. Featuring the latest IQ.LIGHT technology and a digital cockpit.' },
+                'tesla': { title: 'Tesla Model 3', price: '£399', img: 'images/car_34.jpg', desc: 'Engineered for electric efficiency and performance. Dual Motor All-Wheel Drive, instant acceleration, and the safest structure in its class.' },
+                'audi': { title: 'Audi A3 S-line', price: '£329', img: 'images/car_35.jpg', desc: 'A driver-centric cabin and sharp exterior lines. The A3 S-line brings sportiness and elegance to every urban journey.' },
+                'mini': { title: 'Mini Cooper', price: '£275', img: 'images/car_36.jpg', desc: 'The original icon, reimagined for modern city life. Go-kart handling meets premium British design and cutting-edge technology.' },
+                'bmw': { title: 'BMW 3 Series', price: '£389', img: 'images/car_37.jpg', desc: 'The ultimate driving machine. Precision handling meets luxurious comfort. The 3 Series remains the benchmark for executive saloons.' },
+                'mercedes': { title: 'Mercedes C-Class', price: '£445', img: 'images/car_39.jpg', desc: 'A statement of modern luxury. Experience the pinnacle of refined engineering and intuitive digital interiors.' },
+                'audi-q4': { title: 'Audi Q4 e-tron', price: '£525', img: 'images/car_40.jpg', desc: 'The future of electric mobility. A spacious SUV that combines everyday utility with progressive Audi design and performance.' },
+                'porsche': { title: 'Porsche 911 GT3', price: '£899', img: 'images/car_6.jpg', desc: 'Motorsport soul for the open road. The 911 GT3 offers uncompromising performance and razor-sharp precision.' },
+                'rover': { title: 'Range Rover Velar', price: '£675', img: 'images/car_7.jpg', desc: 'Sophisticated elegance and compelling performance. The Velar is a masterclass in minimalist design and capability.' },
+                'volvo': { title: 'Volvo XC90', price: '£589', img: 'images/car_8.jpg', desc: 'The award-winning luxury SUV that keeps you and your family safe. Masterful design, sustainable power, and intelligent technology.' },
+                'jaguar': { title: 'Jaguar F-Type', price: '£725', img: 'images/car_9.jpg', desc: 'A true performance sports car. Power, agility, and a distinctive roar that makes every journey an event.' },
+                'bentley': { title: 'Bentley Bentayga', price: '£2,450', img: 'images/car_10.jpg', desc: 'The ultimate luxury SUV. Bentley craftsmanship meets effortless performance on every terrain.' },
+                'defender': { title: 'Land Rover Defender', price: '£615', img: 'images/car_11.jpg', desc: 'An icon reimagined for the 21st century. Unstoppable capability and tough design for the modern adventurer.' },
+                'urus': { title: 'Lamborghini Urus', price: '£3,100', img: 'images/car_12.jpg', desc: 'The world’s first Super Sport Utility Vehicle. A visionary approach that fuses the soul of a super sports car with the functionality of an SUV.' },
+                'vantage': { title: 'Aston Martin Vantage', price: '£1,890', img: 'images/car_13.jpg', desc: 'Raw, instinctive, and unmistakable. The Vantage is a heart-pounding sports car with a predator-like stance.' },
+                'mini-se': { title: 'Mini Cooper SE', price: '£275', img: 'images/car_14.jpg', desc: 'The all-electric Mini. Iconic design and go-kart feeling, now with zero emissions and instant torque.' },
+                'm4': { title: 'BMW M4 Competition', price: '£1,150', img: 'images/car_16.jpg', desc: 'Engineered for the track, optimized for the road. The M4 Competition represents the pinnacle of M performance and aggressive styling.' },
+                'rs6': { title: 'Audi RS6 Avant', price: '£1,250', img: 'images/car_18.jpg', desc: 'The ultimate performance estate. Combining supercar performance with everyday practicality and a menacing presence.' },
+                'gwagon': { title: 'Mercedes G-Wagon', price: '£2,100', img: 'images/car_19.jpg', desc: 'A legend that defies time. The G-Class remains the ultimate statement of luxury, power, and off-road dominance.' },
+                'roma': { title: 'Ferrari Roma', price: '£3,450', img: 'images/car_20.jpg', desc: 'A contemporary representation of the carefree, pleasurable way of life that characterized Rome in the 1950s and ‘60s.' },
+                'huracan': { title: 'Lamborghini Huracan', price: '£4,200', img: 'images/car_21.jpg', desc: 'The perfect fusion of technology and design. Behind its aggressive beauty lies the power of a V10 engine.' },
+                'cullinan': { title: 'Rolls-Royce Cullinan', price: '£5,100', img: 'images/car_22.jpg', desc: 'Supreme liberty. The Cullinan is the most versatile Rolls-Royce ever, built for those who live a life of uncompromising luxury.' },
+                'g80': { title: 'Genesis G80', price: '£1,450', img: 'images/car_23.jpg', desc: 'Elegant athleticism. The G80 is a midsize luxury sedan that balances refined comfort with dynamic performance.' },
+                'taycan': { title: 'Porsche Taycan Turbo', price: '£2,250', img: 'images/car_24.jpg', desc: 'Soul, electrified. The Taycan is the first all-electric Porsche, delivering pure performance and forward-thinking design.' },
+                'granturismo': { title: 'Maserati GranTurismo', price: '£2,890', img: 'images/car_25.jpg', desc: 'The return of an icon. A grand tourer that perfectly balances high-performance power with timeless Italian style.' },
+                'eletre': { title: 'Lotus Eletre', price: '£845', img: 'images/car_26.jpg', desc: 'The world’s first electric Hyper-SUV. Lotus DNA evolved for a new generation of high-performance utility.' },
+                'plaid': { title: 'Tesla Model S Plaid', price: '£1,050', img: 'images/car_27.jpg', desc: 'Beyond Ludicrous. The quickest accelerating car in production today, with over 1,000 horsepower and tri-motor AWD.' },
+                'i7-elite': { title: 'BMW i7', price: '£1,350', img: 'images/car_28.jpg', desc: 'The all-electric luxury sedan. A masterpiece of digital innovation and expansive space for the ultimate executive journey.' },
+                'eqs': { title: 'Mercedes EQS', price: '£1,100', img: 'images/car_29.jpg', desc: 'The S-Class of electric cars. A visionary sedan that redefines the luxury electric segment with its Hyperscreen and range.' },
+                'air': { title: 'Lucid Air', price: '£1,200', img: 'images/car_30.jpg', desc: 'Luxury electric, reimagined. Unmatched range, incredible power, and a cabin that feels like an executive lounge.' },
+                'r1s': { title: 'Rivian R1S', price: '£985', img: 'images/car_31.jpg', desc: 'The electric SUV for everything. Capable of tackling any terrain while offering massive interior space and modern luxury.' },
+                'p3': { title: 'Polestar 3', price: '£695', img: 'images/car_45.jpg', desc: 'The SUV for the electric age. Minimalist Scandinavian design meets powerful performance and sustainable materials.' },
+                'transporter': { title: 'VW Transporter', price: '£345', img: 'images/car_41.jpg', desc: 'The backbone of British business. Reliability, comfort, and massive cargo space for any professional requirement.' },
+                'transit': { title: 'Ford Transit', price: '£315', img: 'images/car_42.jpg', desc: 'The world leader in commercial vehicles. Unmatched versatility and technology to keep your business moving.' },
+                'sprinter': { title: 'Mercedes Sprinter', price: '£425', img: 'images/car_43.jpg', desc: 'Standard of the logistics world. Efficiency, safety, and Mercedes-Benz quality in every cubic centimeter.' },
+                'proace': { title: 'Toyota Proace', price: '£289', img: 'images/car_44.jpg', desc: 'A versatile workhorse built for reliability and ease of use. The Proace is the smart choice for modern trade fleets.' }
+            };
+
+            const selected = data[car] || {
+                title: car ? car.replace(/-/g, ' ').toUpperCase() : 'Vehicle Detail',
+                price: '£POA',
+                img: `images/car_${((Math.abs(car ? car.split('').reduce((a, b) => (a << 5) - a + b.charCodeAt(0), 0) : 0) % 50) + 1)}.jpg`,
+                desc: 'Full technical specifications and institutional engineering details are available upon inquiry. This vehicle represents the pinnacle of its class, offering unmatched performance and luxury.'
+            };
+            document.getElementById('detail-title').textContent = selected.title;
+            document.getElementById('detail-price').textContent = selected.price;
+            document.getElementById('detail-image').src = selected.img;
+            document.getElementById('detail-desc').textContent = selected.desc;
+
+            // Apply theme from localStorage
+            const savedTheme = localStorage.getItem('lingscars-theme') || 'dark';
+            document.body.style.transition = 'background-color 1.5s var(--silk-ease), color 1.5s var(--silk-ease), filter 1.5s var(--silk-ease)';
+            document.body.setAttribute('data-theme', savedTheme);
+        });
+    </script>
+</body>
+
+</html>

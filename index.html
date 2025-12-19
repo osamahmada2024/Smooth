@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINGsCARS | Intelligent Vehicle Leasing</title>
+    <meta name="description"
+        content="Premium car and van leasing redesigned through HCI principles. Experience the future of automotive selection.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="dark">
+
+
+    <div id="custom-cursor"></div>
+
+
+
+    <div class="glass-orb"
+        style="top: -10%; left: -10%; width: 80vw; height: 80vh; background: var(--clr-primary); opacity: 0.05;"></div>
+    <div class="glass-orb"
+        style="top: 20%; right: -20%; width: 60vw; height: 60vh; background: var(--clr-accent); opacity: 0.03;"></div>
+    <div class="glass-orb"
+        style="bottom: -20%; left: 10%; width: 70vw; height: 70vh; background: var(--clr-primary); opacity: 0.02;">
+    </div>
+    <div class="glass-orb"
+        style="top: 40%; left: 50%; width: 40vw; height: 40vh; background: var(--clr-accent); opacity: 0.02; filter: blur(150px);">
+    </div>
+    <div class="glass-orb"
+        style="bottom: 10%; right: 10%; width: 30vw; height: 30vh; background: var(--clr-primary); opacity: 0.03;">
+    </div>
+    <div class="glass-orb"
+        style="top: 70%; left: -5%; width: 50vw; height: 50vh; background: var(--clr-accent); opacity: 0.02;">
+    </div>
+
+
+    <nav class="nav-shell scrolled" id="main-nav">
+        <div class="container nav-body">
+            <a href="index.html" class="nav-brand">
+                LINGsCARS
+            </a>
+            <div class="nav-items">
+                <a href="personal.html" class="nav-link">Personal</a>
+                <a href="business.html" class="nav-link">Business</a>
+                <a href="vans.html" class="nav-link">Vans</a>
+                <a href="bmw.html" class="nav-link">BMW</a>
+            </div>
+            <div class="nav-interaction" style="display: flex; align-items: center; gap: var(--space-5);">
+                <button id="theme-toggle" class="nav-link"
+                    style="background: none; border: 1px solid rgba(255,255,255,0.2); padding: var(--space-1) var(--space-3); border-radius: 100px; cursor: pointer; color: var(--clr-text-main); font-size: 1.2rem; transition: var(--base-transition);">
+                    <span id="theme-icon">🔆</span>
+                </button>
+                <a href="tel:01914609444" class="nav-link" style="color: var(--clr-primary); font-weight: 800;">0191 460
+                    9444</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+        <section class="category-hero">
+            <div class="hero-overlay"></div>
+            <img src="images/car_18.jpg" alt="Vibrant Red Perfection" class="hero-media">
+
+            <div class="container hero-text-content">
+                <span class="badge-intro">The Vanguard Selection</span>
+                <h1 class="reveal">
+                    Leasing, <br>
+                    <span class="font-decorative">Simplified.</span>
+                </h1>
+                <p class="reveal">
+                    Where institutional strength meets radical efficiency.
+                    Experience the most advanced automotive selection engine ever built.
+                </p>
+                <div style="margin-top: var(--space-13); display: flex; gap: var(--space-5); justify-content: center;"
+                    class="reveal">
+                    <button class="btn-nexus"
+                        onclick="document.getElementById('deals').scrollIntoView({behavior:'smooth'})">Explore The
+                        Fleet</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="margin-top: calc(-1 * var(--space-21)); position: relative; z-index: 30;">
+
+            <div class="search-nexus glass-panel" style="margin: 0 auto; max-width: 1200px; padding: 2rem;">
+                <div class="input-group">
+                    <span class="input-label">Vehicle Type</span>
+                    <select class="search-input-field">
+                        <option>Any Vehicle</option>
+                        <option>Personal Car</option>
+                        <option>Business Fleet</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <span class="input-label">Brand Preference</span>
+                    <select class="search-input-field">
+                        <option>All Brands</option>
+                        <option>Volkswagen</option>
+                        <option>Tesla</option>
+                        <option>Audi</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <span class="input-label">Monthly Budget</span>
+                    <select class="search-input-field">
+                        <option>All Budgets</option>
+                        <option>Under £250</option>
+                        <option>Under £500</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <span class="input-label">Engine Type</span>
+                    <select class="search-input-field">
+                        <option>Electric & Hybrid</option>
+                        <option>Petrol / Diesel</option>
+                    </select>
+                </div>
+                <button class="btn-nexus">Find Matches</button>
+            </div>
+        </section>
+
+
+        <section id="deals" class="deals-nexus" style="padding-top: var(--space-21);">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: var(--space-13);">
+                    <h2>Headline Engagements</h2>
+                    <p>Hand-picked value for the discerning driver.</p>
+                </div>
+
+                <div class="grid-main">
+
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_33.jpg') center/cover;">
+                            <div class="badge-intro" style="position:absolute;top:10px;left:10px;">In Stock</div>
+                        </div>
+                        <div class="deal-content-v2">
+                            <h3>VW T-ROC</h3>
+                            <p>Crossover Excellence</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£299</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=vw" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_34.jpg') center/cover;">
+                            <div class="badge-intro" style="position:absolute;top:10px;left:10px;">Electric</div>
+                        </div>
+                        <div class="deal-content-v2">
+                            <h3>Tesla Model 3</h3>
+                            <p>Efficiency King</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£399</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=tesla" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_35.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Audi A3 S-line</h3>
+                            <p>Precision Hatch</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£329</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=audi" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_37.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>BMW 3 Series</h3>
+                            <p>Saloon Benchmark</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£389</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=bmw" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_39.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Mercedes C-Class</h3>
+                            <p>Luxury Compact</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£445</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=mercedes" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_6.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Porsche 911 GT3</h3>
+                            <p>Electric Sport</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£899</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=porsche" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_7.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Range Rover Velar</h3>
+                            <p>Modern Luxury</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£675</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=rover" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_8.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Volvo XC90</h3>
+                            <p>Family Vault</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£589</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=volvo" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_9.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Jaguar F-Type</h3>
+                            <p>V6 Roar</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£725</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=jaguar" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_10.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Bentley Bentayga</h3>
+                            <p>Peak Comfort</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£2,450</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=bentley" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_11.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Land Rover Defender</h3>
+                            <p>Off-road Legend</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£615</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=defender" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_12.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Lamborghini Urus</h3>
+                            <p>Hyper SUV</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£3,100</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=urus" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_13.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Aston Martin Vantage</h3>
+                            <p>British Force</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£1,890</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=vantage" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_14.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Mini Cooper SE</h3>
+                            <p>Go-Kart Feel</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£275</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=mini-se" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_16.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>BMW M4 Comp</h3>
+                            <p>Track Weapon</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£1,150</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=m4" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_34.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Tesla Model Y</h3>
+                            <p>The Game Changer</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£455</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=tesla" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_18.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Audi RS6 Avant</h3>
+                            <p>Family Supercar</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£1,250</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=rs6" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_19.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Mercedes G-Wagon</h3>
+                            <p>Obsidian Icon</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£2,100</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=gwagon" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_20.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Ferrari Roma</h3>
+                            <p>La Nuova Dolce Vita</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£3,450</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=roma" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_21.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Lamborghini Huracan</h3>
+                            <p>Pure V10 Soul</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£4,200</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=huracan" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_22.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Rolls Royce Cullinan</h3>
+                            <p>Absolute Authority</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£5,100</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=cullinan" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_28.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>BMW i7</h3>
+                            <p>Future Presidential</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£1,450</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=i7-elite" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_24.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Porsche Taycan Turbo</h3>
+                            <p>Track Intelligence</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£2,250</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=taycan" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_25.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Maserati MC20</h3>
+                            <p>Italian Velocity</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£2,890</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=granturismo" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_26.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Audi Q8 e-tron</h3>
+                            <p>Vanguard SUV</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£845</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=eletre" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_27.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Tesla Model S Plaid</h3>
+                            <p>Beyond Ludicrous</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£1,050</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=plaid" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_37.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>BMW X7 M60i</h3>
+                            <p>Executive Fortress</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£1,350</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=bmw" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_29.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Mercedes EQS</h3>
+                            <p>Electric Sovereignty</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£1,100</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=eqs" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_30.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Lucid Air</h3>
+                            <p>Space-Age Luxury</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£1,200</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=air" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_31.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Rivian R1S</h3>
+                            <p>Adventure Redefined</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£985</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=r1s" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_6.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Lotus Emira</h3>
+                            <p>Pure Engineering</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£745</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=porsche" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-deal-v2 reveal">
+                        <div class="deal-visual" style="background: url('images/car_45.jpg') center/cover;"></div>
+                        <div class="deal-content-v2">
+                            <h3>Polestar 3</h3>
+                            <p>Scandi Performance</p>
+                            <div class="deal-pricing-v2">
+                                <div><span class="price-v2">£695</span><span class="period-v2">/mo</span></div>
+                                <a href="details.html?car=p3" class="btn-explore">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="intel"
+            style="padding: var(--space-21) 0; background: var(--clr-surface-0); position: relative; overflow: hidden; border-top: 1px solid var(--clr-border-nav);">
+            <div
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--clr-primary), transparent);">
+            </div>
+            <div class="container">
+                <div class="grid-main"
+                    style="grid-template-columns: repeat(2, 1fr); align-items: center; gap: var(--space-21);">
+                    <div>
+                        <span class="badge-intro" style="background: var(--clr-primary-glow);">System Status:
+                            Operational</span>
+                        <h2 style="font-size: 3.5rem; line-height: 1.1; margin: var(--space-5) 0;">Automotive <br><span
+                                style="color: var(--clr-primary);">Intelligence.</span></h2>
+                        <p style="font-size: 1.1rem; color: var(--clr-text-dim); margin-bottom: var(--space-13);">
+                            Our proprietary leasing engine processes over 1.2M data points daily to secure the UK's most
+                            aggressive residual values.
+                            From real-time depreciation tracking to global logistics optimization, we provide the edge
+                            you need.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-8);">
+                            <div
+                                style="padding: var(--space-8); background: var(--clr-surface-2); border: var(--border-thin); border-radius: var(--radius-fluid);">
+                                <div style="font-size: 2rem; font-weight: 900; color: var(--clr-text-main);">0.2s</div>
+                                <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--clr-primary);">
+                                    Pricing Latency</p>
+                            </div>
+                            <div
+                                style="padding: var(--space-8); background: var(--clr-surface-2); border: var(--border-thin); border-radius: var(--radius-fluid);">
+                                <div style="font-size: 2rem; font-weight: 900; color: var(--clr-text-main);">100%</div>
+                                <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--clr-primary);">
+                                    Price Matching</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position: relative;">
+                        <div
+                            style="background: var(--clr-surface-2); padding: var(--space-8); border-radius: var(--radius-fluid); border: var(--border-glow); backdrop-filter: blur(20px);">
+                            <h4 style="color: var(--clr-text-main); margin-bottom: var(--space-5);">Live Supply Chain
+                                Feed</h4>
+                            <div style="display: flex; flex-direction: column; gap: var(--space-5);">
+                                <div
+                                    style="display: flex; justify-content: space-between; font-size: 0.8rem; padding-bottom: 8px; border-bottom: var(--border-thin);">
+                                    <span style="color: var(--clr-text-dim);">TESLA M3 RED</span>
+                                    <span style="color: #10b981;">Arrived Port</span>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; font-size: 0.8rem; padding-bottom: 8px; border-bottom: var(--border-thin);">
+                                    <span style="color: var(--clr-text-dim);">BMW iX BLACK</span>
+                                    <span style="color: var(--clr-primary);">Dispatching</span>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; font-size: 0.8rem; padding-bottom: 8px; border-bottom: var(--border-thin);">
+                                    <span style="color: var(--clr-text-dim);">VW ID.4 WHITE</span>
+                                    <span style="color: #f59e0b;">Inspection</span>
+                                </div>
+                            </div>
+                            <button class="btn-nexus"
+                                style="width: 100%; margin-top: var(--space-8); font-size: 0.7rem; padding: 0.75rem;">Network
+                                Map</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="fleet" style="padding: var(--space-21) 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: var(--space-13);">
+                    <h2>The Global Fleet Matrix</h2>
+                    <p>Every brand. Every model. Every edge.</p>
+                </div>
+                <div class="brand-showcase" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
+                    <div class="brand-card-v2">
+                        <div class="brand-icon-wrap">BMW</div><span class="brand-label">BMW</span>
+                    </div>
+                    <div class="brand-card-v2">
+                        <div class="brand-icon-wrap">AUDI</div><span class="brand-label">Audi</span>
+                    </div>
+                    <div class="brand-card-v2">
+                        <div class="brand-icon-wrap">MB</div><span class="brand-label">Mercedes</span>
+                    </div>
+                    <div class="brand-card-v2">
+                        <div class="brand-icon-wrap">VW</div><span class="brand-label">Volkswagen</span>
+                    </div>
+                    <div class="brand-card-v2">
+                        <div class="brand-icon-wrap">TESLA</div><span class="brand-label">Tesla</span>
+                    </div>
+                    <div class="brand-card-v2">
+                        <div class="brand-icon-wrap">PORS</div><span class="brand-label">Porsche</span>
+                    </div>
+                    <div class="brand-card-v2">
+                        <div class="brand-icon-wrap">LAND</div><span class="brand-label">Land Rover</span>
+                    </div>
+                    <div class="brand-card-v2">
+                        <div class="brand-icon-wrap">VOLV</div><span class="brand-label">Volvo</span>
+                    </div>
+                    <div class="brand-card-v2">
+                        <div class="brand-icon-wrap">LEXS</div><span class="brand-label">Lexus</span>
+                    </div>
+                    <div class="brand-card-v2">
+                        <div class="brand-icon-wrap">KIA</div><span class="brand-label">Kia</span>
+                    </div>
+                    <div class="brand-card-v2">
+                        <div class="brand-icon-wrap">HYUN</div><span class="brand-label">Hyundai</span>
+                    </div>
+                    <div class="brand-card-v2">
+                        <div class="brand-icon-wrap">TOYO</div><span class="brand-label">Toyota</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="trust-mega"
+            style="padding: var(--space-21) 0; background: var(--clr-surface-2); border-top: var(--border-thin); border-bottom: var(--border-thin);">
+            <div class="container">
+                <div
+                    style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-13); text-align: center;">
+                    <div>
+                        <div style="font-size: 4rem; font-weight: 900; color: var(--clr-primary);">120k+</div>
+                        <div class="input-label">Cars Delivered</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 4rem; font-weight: 900; color: var(--clr-primary);">55%</div>
+                        <div class="input-label">Return Customers</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 4rem; font-weight: 900; color: var(--clr-primary);">#1</div>
+                        <div class="input-label">Independent Rating</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 4rem; font-weight: 900; color: var(--clr-primary);">0%</div>
+                        <div class="input-label">Hidden Fees</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="faq"
+            style="padding: var(--space-21) 0; background: var(--clr-surface-0); border-bottom: var(--border-thin);">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: var(--space-13);">
+                    <h2>Knowledge <span class="font-decorative" style="font-size: 1.25em;">Nexus.</span></h2>
+                    <p>Institutional transparency. Answered with radical clarity.</p>
+                </div>
+                <div class="faq-nexus reveal">
+                    <div class="faq-item">
+                        <h3>What is the lead time for new orders?</h3>
+                        <p>Our direct neural link to manufacturer systems ensures real-time allocation. Most "In Stock"
+                            vehicles are dispatched within 14 days, while custom builds range from 3 to 6 months
+                            depending on individual specification.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How does "Absolute Black" pricing work?</h3>
+                        <p>We operate on a zero-margin transparency model. The price you see is the price we've
+                            algorithmically secured from our direct global supply chain. No hidden fees. No middleman
+                            markups.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What happens at the end of the lease?</h3>
+                        <p>Our "Silk Smooth" return process means you simply hand back the keys or upgrade to the latest
+                            model. Our inspectors use industry-standard fair wear and tear guidelines to ensure absolute
+                            fairness.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is insurance included in the monthly cost?</h3>
+                        <p>Standard leasing covers the vehicle, road tax, and delivery. While insurance is typically the
+                            driver's responsibility, we offer "Total Care" packages on select models that integrate
+                            fully comprehensive cover.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer id="contact" class="footer-v2">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="margin-bottom: var(--space-5);">LINGsCARS</h3>
+                    <p style="font-size: 0.9rem;">The UK's favorite car leasing company. Regulated by the FCA and
+                        obsessed with transparency.</p>
+                    <div style="margin-top: var(--space-5);">
+                        <div class="input-label">Direct Contact</div>
+                        <a href="tel:01914609444" class="nav-link"
+                            style="font-size: 1.25rem; font-weight: 800; color: var(--clr-text-main);">0191 460 9444</a>
+                        <p style="font-size: 0.8rem; margin-top: 0.25rem;">sales@lingscars.com</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="input-label">Access</span>
+                    <a href="#deals" class="f-link">All Car Leasing Deals</a>
+                    <a href="#discover" class="f-link">Manufacturer Grid</a>
+                    <a href="#" class="f-link">Meet The Team</a>
+                </div>
+                <div>
+                    <span class="input-label">Information</span>
+                    <a href="#" class="f-link">Privacy Policy</a>
+                    <a href="#" class="f-link">Terms & Conditions</a>
+                    <a href="#" class="f-link">Cookie Policy</a>
+                </div>
+                <div>
+                    <span class="input-label">Compliance</span>
+                    <p style="font-size: 0.8rem;">FCA Number: 721481</p>
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem;">BVRLA Membership: 1982</p>
+                    <div style="margin-top: var(--space-3); border-radius: 4px;" class="badge-intro">Data Secure</div>
+                </div>
+            </div>
+            <div style="margin-top: var(--space-13); padding-top: var(--space-5); border-top: var(--border-thin);">
+                <p style="font-size: 0.75rem; color: var(--clr-text-dim); text-align: center;">
+                    LINGsCARS.com Limited acts as a credit broker not a lender. All finance is subject to
+                    status.applicants must be 18+.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
