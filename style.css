@@ -121,6 +121,12 @@ body {
     letter-spacing: -0.01em;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 h1 {
     font-size: clamp(3rem, 12vw, 8.5rem);
     font-weight: 800;
@@ -938,11 +944,20 @@ p {
 
 @media (max-width: 640px) {
     .search-nexus {
-        grid-template-columns: 1fr;
+        padding: 1.5rem;
     }
 
     .grid-main {
         grid-template-columns: 1fr;
+        gap: var(--space-5);
+    }
+
+    .hero-text-content h1 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+    }
+
+    .hero-text-content p {
+        font-size: 1.1rem;
     }
 }
 
@@ -1326,11 +1341,13 @@ p {
     background: rgba(0, 0, 0, 0.6);
     z-index: 9999;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
 .mobile-overlay.active {
     opacity: 1;
+    pointer-events: auto;
 }
 
 /* Mobile Menu Panel */
@@ -1527,21 +1544,20 @@ p {
     }
 
     .nav-shell {
-        width: calc(100% - 70px);
-        max-width: calc(100% - 70px);
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        border-radius: 0;
     }
 }
 
 @media (max-width: 768px) {
     .nav-shell {
-        width: calc(100% - 80px);
-        left: var(--space-3);
-        transform: none;
-        border-radius: 50px;
+        height: 60px;
     }
 
     .nav-brand {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .mobile-menu-btn {

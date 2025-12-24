@@ -38,29 +38,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const interactables = document.querySelectorAll('.btn-nexus, .brand-card-v2, .nav-link, .card-deal-v2');
 
-    interactables.forEach(item => {
-        item.addEventListener('mousemove', (e) => {
-            const rect = item.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            // Much slower, gentler movement
-            item.style.transform = `translate(${x * 0.03}px, ${y * 0.03}px)`;
-            item.style.transition = 'transform 0.6s ease-out';
-            cursor.style.transform = 'translate(-50%, -50%) scale(2)';
-            cursor.style.background = 'var(--clr-primary)';
-            cursor.style.mixBlendMode = 'normal';
-            cursor.style.opacity = '0.15';
-        });
+    // Only apply complex mousemove effects on non-touch devices
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = '';
-            item.style.transition = 'transform 0.8s ease-out';
-            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-            cursor.style.background = 'white';
-            cursor.style.mixBlendMode = 'difference';
-            cursor.style.opacity = '0.5';
+    if (!isTouchDevice) {
+        interactables.forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                item.style.transform = `translate(${x * 0.03}px, ${y * 0.03}px)`;
+                item.style.transition = 'transform 0.6s ease-out';
+                cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+                cursor.style.background = 'var(--clr-primary)';
+                cursor.style.mixBlendMode = 'normal';
+                cursor.style.opacity = '0.15';
+            });
+
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = '';
+                item.style.transition = 'transform 0.8s ease-out';
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursor.style.background = 'white';
+                cursor.style.mixBlendMode = 'difference';
+                cursor.style.opacity = '0.5';
+            });
         });
-    });
+    }
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
