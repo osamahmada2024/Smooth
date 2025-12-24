@@ -4,159 +4,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LINGsCARS | Vehicle Intelligence Details</title>
+    <title>Car Details | LINGsCARS</title>
+    <meta name="description" content="View car details, pricing, and specifications. Configure your lease deal.">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .details-hero {
-            padding: var(--space-21) 0;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .spec-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-8);
-            margin-top: var(--space-13);
-        }
-
-        .spec-item {
-            padding: var(--space-8);
-            background: var(--clr-surface-1);
-            border-radius: var(--radius-fluid);
-            border: var(--border-thin);
-        }
-    </style>
 </head>
 
 <body data-theme="dark">
-    <nav class="nav-shell scrolled" id="main-nav">
-        <div class="container nav-body">
-            <a href="index.html" class="nav-brand">
-                LINGsCARS
+    <div id="custom-cursor"></div>
+
+    <!-- Glass Orbs Background -->
+    <div class="glass-orb"
+        style="top: -10%; left: -10%; width: 80vw; height: 80vh; background: var(--clr-primary); opacity: 0.05;"></div>
+    <div class="glass-orb"
+        style="top: 20%; right: -20%; width: 60vw; height: 60vh; background: var(--clr-accent); opacity: 0.03;"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- Mobile Menu Panel -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="nav-brand">LINGsCARS</a>
+            <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li><a href="car-leasing.html" class="mobile-nav-link">Car Leasing</a></li>
+            <li><a href="vans.html" class="mobile-nav-link">Van Leasing</a></li>
+            <li><a href="manufacturers.html" class="mobile-nav-link">Manufacturers</a></li>
+            <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+            <li><a href="account.html" class="mobile-nav-link">Your Account</a></li>
+        </ul>
+        <div class="mobile-contact">
+            <a href="tel:+441914609444" class="mobile-phone-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                0191 460 9444
             </a>
-            <div class="nav-items">
-                <a href="personal.html" class="nav-link">Personal</a>
-                <a href="business.html" class="nav-link">Business</a>
+            <a href="mailto:sales@lingscars.com" class="mobile-email-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Email Us
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="nav-shell" id="main-nav">
+        <div class="nav-body">
+            <a href="index.html" class="nav-brand">LINGsCARS</a>
+            <div class="nav-center">
+                <a href="car-leasing.html" class="nav-link">Cars</a>
                 <a href="vans.html" class="nav-link">Vans</a>
-                <a href="bmw.html" class="nav-link">BMW</a>
+                <a href="manufacturers.html" class="nav-link">Brands</a>
+                <a href="about.html" class="nav-link">About</a>
             </div>
-            <div class="nav-interaction" style="display: flex; align-items: center; gap: var(--space-5);">
-                <button id="theme-toggle" class="nav-link"
-                    style="background: none; border: 1px solid rgba(255,255,255,0.2); padding: var(--space-1) var(--space-3); border-radius: 100px; cursor: pointer; color: var(--clr-text-main); font-size: 1.2rem; transition: var(--base-transition);">
-                    <span id="theme-icon">🔆</span>
+            <div class="nav-right">
+                <a href="tel:+441914609444" class="nav-cta-phone">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span>0191 460 9444</span>
+                </a>
+                <a href="account.html" class="nav-account-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <span id="theme-icon">☀</span>
                 </button>
-                <a href="tel:01914609444" class="nav-link" style="color: var(--clr-primary); font-weight: 800;">0191 460
-                    9444</a>
             </div>
         </div>
     </nav>
 
     <main>
-        <section class="details-hero">
-            <div class="container reveal active">
+        <!-- Car Gallery Section -->
+        <section style="padding-top: calc(72px + var(--space-8));">
+            <div class="container">
                 <div
-                    style="display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-13); align-items: center;">
-                    <div id="car-image-container">
-                        <img src="" id="detail-image" alt="Car Visual"
-                            style="width: 100%; border-radius: var(--radius-fluid); box-shadow: 0 40px 100px rgba(0,0,0,0.3);">
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); margin-bottom: var(--space-13);">
+                    <!-- Main Image -->
+                    <div class="reveal"
+                        style="position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16/10;">
+                        <img src="images/car_1.jpg" alt="Vauxhall Frontera"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <span class="badge-intro"
+                            style="position: absolute; top: var(--space-5); left: var(--space-5);">Special Offer</span>
                     </div>
-                    <div>
-                        <span class="badge-intro">Exclusive Engagement</span>
-                        <h1 id="detail-title">Vehicle Title</h1>
-                        <p id="detail-desc" style="margin: var(--space-5) 0;">Loading technical specifications and
-                            availability...</p>
-                        <div style="margin-top: var(--space-8);">
-                            <div class="price-v2" id="detail-price">£--</div>
-                            <span class="period-v2">per month inc. VAT</span>
+
+                    <!-- Car Info -->
+                    <div class="reveal">
+                        <span class="badge-intro" style="margin-bottom: var(--space-3);">Personal Lease</span>
+                        <h1 style="font-size: 2.5rem; margin-bottom: var(--space-3);">Vauxhall Frontera</h1>
+                        <p style="font-size: 1.1rem; color: var(--clr-text-muted); margin-bottom: var(--space-8);">1.2
+                            Turbo Design 5dr Auto | 36 versions available</p>
+
+                        <!-- Price Box -->
+                        <div class="feature-pill" style="padding: var(--space-8); margin-bottom: var(--space-8);">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-5);">
+                                <span style="color: var(--clr-text-muted);">Monthly Payment</span>
+                                <div>
+                                    <span
+                                        style="font-size: 2.5rem; font-weight: 900; color: var(--clr-primary);">£133</span>
+                                    <span style="color: var(--clr-text-muted);">/mo inc VAT</span>
+                                </div>
+                            </div>
+                            <div
+                                style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-5); padding-top: var(--space-5); border-top: var(--border-thin);">
+                                <div>
+                                    <div class="input-label">Initial Payment</div>
+                                    <div style="font-weight: 700;">£1,596</div>
+                                </div>
+                                <div>
+                                    <div class="input-label">Contract Length</div>
+                                    <div style="font-weight: 700;">48 months</div>
+                                </div>
+                                <div>
+                                    <div class="input-label">Annual Mileage</div>
+                                    <div style="font-weight: 700;">8,000 miles</div>
+                                </div>
+                            </div>
                         </div>
-                        <button class="btn-nexus" style="margin-top: var(--space-8); padding: 1.25rem 3rem;">Inquire
-                            Now</button>
+
+                        <!-- CTA Buttons -->
+                        <div style="display: flex; gap: var(--space-5);">
+                            <button class="btn-nexus" style="flex: 1;">Order Now</button>
+                            <button class="btn-nexus"
+                                style="flex: 1; background: transparent; border: 2px solid var(--clr-primary);">Request
+                                Quote</button>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="spec-grid">
-                    <div class="spec-item">
-                        <span class="input-label">Engine</span>
-                        <div style="font-weight: 700; font-size: 1.25rem;">2.0L Turbo / EV</div>
+        <!-- Configuration Section -->
+        <section
+            style="padding: var(--space-13) 0; background: var(--clr-surface-2); border-top: var(--border-thin); border-bottom: var(--border-thin);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: var(--space-13);">Configure Your <span
+                        class="font-decorative">Deal</span></h2>
+
+                <div class="search-nexus reveal">
+                    <div class="input-group">
+                        <span class="input-label">Contract Length</span>
+                        <select class="search-input-field">
+                            <option>24 months</option>
+                            <option>36 months</option>
+                            <option selected>48 months</option>
+                        </select>
                     </div>
-                    <div class="spec-item">
-                        <span class="input-label">Transmission</span>
-                        <div style="font-weight: 700; font-size: 1.25rem;">Automatic</div>
+                    <div class="input-group">
+                        <span class="input-label">Annual Mileage</span>
+                        <select class="search-input-field">
+                            <option>5,000 miles</option>
+                            <option selected>8,000 miles</option>
+                            <option>10,000 miles</option>
+                            <option>15,000 miles</option>
+                        </select>
                     </div>
-                    <div class="spec-item">
-                        <span class="input-label">Availability</span>
-                        <div style="font-weight: 700; font-size: 1.25rem;">In Stock</div>
+                    <div class="input-group">
+                        <span class="input-label">Initial Payment</span>
+                        <select class="search-input-field">
+                            <option>3 months</option>
+                            <option>6 months</option>
+                            <option selected>12 months</option>
+                        </select>
                     </div>
-                    <div class="spec-item">
-                        <span class="input-label">Color</span>
-                        <div style="font-weight: 700; font-size: 1.25rem;">Metallic Gray / Blue</div>
+                    <button class="btn-nexus">Update Price</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specifications Section -->
+        <section style="padding: var(--space-21) 0;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: var(--space-13);">Vehicle <span
+                        class="font-decorative">Specifications</span></h2>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-8);">
+                    <div class="feature-pill reveal" style="padding: var(--space-8);">
+                        <div class="input-label">Engine</div>
+                        <div style="font-size: 1.25rem; font-weight: 700;">1.2 Turbo Petrol</div>
                     </div>
+                    <div class="feature-pill reveal" style="padding: var(--space-8);">
+                        <div class="input-label">Power</div>
+                        <div style="font-size: 1.25rem; font-weight: 700;">136 PS</div>
+                    </div>
+                    <div class="feature-pill reveal" style="padding: var(--space-8);">
+                        <div class="input-label">Transmission</div>
+                        <div style="font-size: 1.25rem; font-weight: 700;">8-speed Automatic</div>
+                    </div>
+                    <div class="feature-pill reveal" style="padding: var(--space-8);">
+                        <div class="input-label">Fuel Economy</div>
+                        <div style="font-size: 1.25rem; font-weight: 700;">47.1 mpg</div>
+                    </div>
+                    <div class="feature-pill reveal" style="padding: var(--space-8);">
+                        <div class="input-label">CO2 Emissions</div>
+                        <div style="font-size: 1.25rem; font-weight: 700;">137 g/km</div>
+                    </div>
+                    <div class="feature-pill reveal" style="padding: var(--space-8);">
+                        <div class="input-label">0-62 mph</div>
+                        <div style="font-size: 1.25rem; font-weight: 700;">9.2 seconds</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section style="padding: var(--space-21) 0; background: var(--clr-surface-2); border-top: var(--border-thin);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: var(--space-13);">Key <span
+                        class="font-decorative">Features</span></h2>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-5);">
+                    <div class="faq-item reveal">
+                        <h3>✓ 10" Touchscreen Display</h3>
+                        <p>Full-color infotainment system with Apple CarPlay & Android Auto</p>
+                    </div>
+                    <div class="faq-item reveal">
+                        <h3>✓ LED Headlights</h3>
+                        <p>Adaptive LED headlights with automatic high beam</p>
+                    </div>
+                    <div class="faq-item reveal">
+                        <h3>✓ Parking Sensors</h3>
+                        <p>Front and rear parking sensors with rearview camera</p>
+                    </div>
+                    <div class="faq-item reveal">
+                        <h3>✓ Climate Control</h3>
+                        <p>Dual-zone automatic climate control</p>
+                    </div>
+                    <div class="faq-item reveal">
+                        <h3>✓ Safety Package</h3>
+                        <p>Lane departure warning, automatic emergency braking</p>
+                    </div>
+                    <div class="faq-item reveal">
+                        <h3>✓ Keyless Entry</h3>
+                        <p>Keyless entry and push-button start</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="padding: var(--space-21) 0; text-align: center;">
+            <div class="container">
+                <h2 class="reveal">Ready to <span class="font-decorative">Drive?</span></h2>
+                <p style="max-width: 600px; margin: var(--space-5) auto var(--space-8); color: var(--clr-text-muted);">
+                    Get in touch with our team to discuss your requirements and secure this deal.
+                </p>
+                <div style="display: flex; justify-content: center; gap: var(--space-5); flex-wrap: wrap;">
+                    <button class="btn-nexus reveal">Order Now - £133/mo</button>
+                    <a href="tel:+441914609444" class="btn-nexus reveal"
+                        style="background: transparent; border: 2px solid var(--clr-primary);">Call 0191 460 9444</a>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
+    <footer id="contact" class="footer-v2">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="margin-bottom: var(--space-5);">LINGsCARS</h3>
+                    <p style="font-size: 0.9rem;">The UK's favorite car leasing company.</p>
+                    <div style="margin-top: var(--space-5);">
+                        <div class="input-label">Direct Contact</div>
+                        <a href="tel:01914609444"
+                            style="font-size: 1.25rem; font-weight: 800; color: var(--clr-text-main);">0191 460 9444</a>
+                    </div>
+                </div>
+                <div>
+                    <span class="input-label">Access</span>
+                    <a href="car-leasing.html" class="f-link">Car Leasing Deals</a>
+                    <a href="vans.html" class="f-link">Van Leasing Deals</a>
+                    <a href="manufacturers.html" class="f-link">Manufacturers</a>
+                </div>
+                <div>
+                    <span class="input-label">Information</span>
+                    <a href="#" class="f-link">Privacy Policy</a>
+                    <a href="#" class="f-link">Terms & Conditions</a>
+                </div>
+                <div>
+                    <span class="input-label">Compliance</span>
+                    <p style="font-size: 0.8rem;">FCA Number: 721481</p>
+                </div>
+            </div>
+            <div style="margin-top: var(--space-13); padding-top: var(--space-5); border-top: var(--border-thin);">
+                <p style="font-size: 0.75rem; color: var(--clr-text-dim); text-align: center;">
+                    © 2004-2025 LINGsCARS.com Limited. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
-            const car = params.get('car');
+            const name = params.get('name');
+            const img = params.get('img');
+            const price = params.get('price');
+            const type = params.get('type') || 'Personal Lease';
 
-            const data = {
-                'vw': { title: 'Volkswagen T-ROC', price: '£299', img: 'images/car_33.jpg', desc: 'The T-ROC combines the presence of an SUV with the agility of a compact hatchback. Featuring the latest IQ.LIGHT technology and a digital cockpit.' },
-                'tesla': { title: 'Tesla Model 3', price: '£399', img: 'images/car_34.jpg', desc: 'Engineered for electric efficiency and performance. Dual Motor All-Wheel Drive, instant acceleration, and the safest structure in its class.' },
-                'audi': { title: 'Audi A3 S-line', price: '£329', img: 'images/car_35.jpg', desc: 'A driver-centric cabin and sharp exterior lines. The A3 S-line brings sportiness and elegance to every urban journey.' },
-                'mini': { title: 'Mini Cooper', price: '£275', img: 'images/car_36.jpg', desc: 'The original icon, reimagined for modern city life. Go-kart handling meets premium British design and cutting-edge technology.' },
-                'bmw': { title: 'BMW 3 Series', price: '£389', img: 'images/car_37.jpg', desc: 'The ultimate driving machine. Precision handling meets luxurious comfort. The 3 Series remains the benchmark for executive saloons.' },
-                'mercedes': { title: 'Mercedes C-Class', price: '£445', img: 'images/car_39.jpg', desc: 'A statement of modern luxury. Experience the pinnacle of refined engineering and intuitive digital interiors.' },
-                'audi-q4': { title: 'Audi Q4 e-tron', price: '£525', img: 'images/car_40.jpg', desc: 'The future of electric mobility. A spacious SUV that combines everyday utility with progressive Audi design and performance.' },
-                'porsche': { title: 'Porsche 911 GT3', price: '£899', img: 'images/car_6.jpg', desc: 'Motorsport soul for the open road. The 911 GT3 offers uncompromising performance and razor-sharp precision.' },
-                'rover': { title: 'Range Rover Velar', price: '£675', img: 'images/car_7.jpg', desc: 'Sophisticated elegance and compelling performance. The Velar is a masterclass in minimalist design and capability.' },
-                'volvo': { title: 'Volvo XC90', price: '£589', img: 'images/car_8.jpg', desc: 'The award-winning luxury SUV that keeps you and your family safe. Masterful design, sustainable power, and intelligent technology.' },
-                'jaguar': { title: 'Jaguar F-Type', price: '£725', img: 'images/car_9.jpg', desc: 'A true performance sports car. Power, agility, and a distinctive roar that makes every journey an event.' },
-                'bentley': { title: 'Bentley Bentayga', price: '£2,450', img: 'images/car_10.jpg', desc: 'The ultimate luxury SUV. Bentley craftsmanship meets effortless performance on every terrain.' },
-                'defender': { title: 'Land Rover Defender', price: '£615', img: 'images/car_11.jpg', desc: 'An icon reimagined for the 21st century. Unstoppable capability and tough design for the modern adventurer.' },
-                'urus': { title: 'Lamborghini Urus', price: '£3,100', img: 'images/car_12.jpg', desc: 'The world’s first Super Sport Utility Vehicle. A visionary approach that fuses the soul of a super sports car with the functionality of an SUV.' },
-                'vantage': { title: 'Aston Martin Vantage', price: '£1,890', img: 'images/car_13.jpg', desc: 'Raw, instinctive, and unmistakable. The Vantage is a heart-pounding sports car with a predator-like stance.' },
-                'mini-se': { title: 'Mini Cooper SE', price: '£275', img: 'images/car_14.jpg', desc: 'The all-electric Mini. Iconic design and go-kart feeling, now with zero emissions and instant torque.' },
-                'm4': { title: 'BMW M4 Competition', price: '£1,150', img: 'images/car_16.jpg', desc: 'Engineered for the track, optimized for the road. The M4 Competition represents the pinnacle of M performance and aggressive styling.' },
-                'rs6': { title: 'Audi RS6 Avant', price: '£1,250', img: 'images/car_18.jpg', desc: 'The ultimate performance estate. Combining supercar performance with everyday practicality and a menacing presence.' },
-                'gwagon': { title: 'Mercedes G-Wagon', price: '£2,100', img: 'images/car_19.jpg', desc: 'A legend that defies time. The G-Class remains the ultimate statement of luxury, power, and off-road dominance.' },
-                'roma': { title: 'Ferrari Roma', price: '£3,450', img: 'images/car_20.jpg', desc: 'A contemporary representation of the carefree, pleasurable way of life that characterized Rome in the 1950s and ‘60s.' },
-                'huracan': { title: 'Lamborghini Huracan', price: '£4,200', img: 'images/car_21.jpg', desc: 'The perfect fusion of technology and design. Behind its aggressive beauty lies the power of a V10 engine.' },
-                'cullinan': { title: 'Rolls-Royce Cullinan', price: '£5,100', img: 'images/car_22.jpg', desc: 'Supreme liberty. The Cullinan is the most versatile Rolls-Royce ever, built for those who live a life of uncompromising luxury.' },
-                'g80': { title: 'Genesis G80', price: '£1,450', img: 'images/car_23.jpg', desc: 'Elegant athleticism. The G80 is a midsize luxury sedan that balances refined comfort with dynamic performance.' },
-                'taycan': { title: 'Porsche Taycan Turbo', price: '£2,250', img: 'images/car_24.jpg', desc: 'Soul, electrified. The Taycan is the first all-electric Porsche, delivering pure performance and forward-thinking design.' },
-                'granturismo': { title: 'Maserati GranTurismo', price: '£2,890', img: 'images/car_25.jpg', desc: 'The return of an icon. A grand tourer that perfectly balances high-performance power with timeless Italian style.' },
-                'eletre': { title: 'Lotus Eletre', price: '£845', img: 'images/car_26.jpg', desc: 'The world’s first electric Hyper-SUV. Lotus DNA evolved for a new generation of high-performance utility.' },
-                'plaid': { title: 'Tesla Model S Plaid', price: '£1,050', img: 'images/car_27.jpg', desc: 'Beyond Ludicrous. The quickest accelerating car in production today, with over 1,000 horsepower and tri-motor AWD.' },
-                'i7-elite': { title: 'BMW i7', price: '£1,350', img: 'images/car_28.jpg', desc: 'The all-electric luxury sedan. A masterpiece of digital innovation and expansive space for the ultimate executive journey.' },
-                'eqs': { title: 'Mercedes EQS', price: '£1,100', img: 'images/car_29.jpg', desc: 'The S-Class of electric cars. A visionary sedan that redefines the luxury electric segment with its Hyperscreen and range.' },
-                'air': { title: 'Lucid Air', price: '£1,200', img: 'images/car_30.jpg', desc: 'Luxury electric, reimagined. Unmatched range, incredible power, and a cabin that feels like an executive lounge.' },
-                'r1s': { title: 'Rivian R1S', price: '£985', img: 'images/car_31.jpg', desc: 'The electric SUV for everything. Capable of tackling any terrain while offering massive interior space and modern luxury.' },
-                'p3': { title: 'Polestar 3', price: '£695', img: 'images/car_45.jpg', desc: 'The SUV for the electric age. Minimalist Scandinavian design meets powerful performance and sustainable materials.' },
-                'transporter': { title: 'VW Transporter', price: '£345', img: 'images/car_41.jpg', desc: 'The backbone of British business. Reliability, comfort, and massive cargo space for any professional requirement.' },
-                'transit': { title: 'Ford Transit', price: '£315', img: 'images/car_42.jpg', desc: 'The world leader in commercial vehicles. Unmatched versatility and technology to keep your business moving.' },
-                'sprinter': { title: 'Mercedes Sprinter', price: '£425', img: 'images/car_43.jpg', desc: 'Standard of the logistics world. Efficiency, safety, and Mercedes-Benz quality in every cubic centimeter.' },
-                'proace': { title: 'Toyota Proace', price: '£289', img: 'images/car_44.jpg', desc: 'A versatile workhorse built for reliability and ease of use. The Proace is the smart choice for modern trade fleets.' }
-            };
-
-            const selected = data[car] || {
-                title: car ? car.replace(/-/g, ' ').toUpperCase() : 'Vehicle Detail',
-                price: '£POA',
-                img: `images/car_${((Math.abs(car ? car.split('').reduce((a, b) => (a << 5) - a + b.charCodeAt(0), 0) : 0) % 50) + 1)}.jpg`,
-                desc: 'Full technical specifications and institutional engineering details are available upon inquiry. This vehicle represents the pinnacle of its class, offering unmatched performance and luxury.'
-            };
-            document.getElementById('detail-title').textContent = selected.title;
-            document.getElementById('detail-price').textContent = selected.price;
-            document.getElementById('detail-image').src = selected.img;
-            document.getElementById('detail-desc').textContent = selected.desc;
-
-            // Apply theme from localStorage
-            const savedTheme = localStorage.getItem('lingscars-theme') || 'dark';
-            document.body.style.transition = 'background-color 1.5s var(--silk-ease), color 1.5s var(--silk-ease), filter 1.5s var(--silk-ease)';
-            document.body.setAttribute('data-theme', savedTheme);
+            if (name) {
+                document.querySelector('h1').textContent = name;
+                document.title = `${name} | LINGsCARS`;
+            }
+            if (img) {
+                document.querySelector('section img').src = `images/${img}`;
+                document.querySelector('section img').alt = name || 'Vehicle';
+            }
+            if (price) {
+                document.querySelector('.price-v2, span[style*="font-size: 2.5rem"]').textContent = `£${price}`;
+                const btnOrder = document.querySelector('button.btn-nexus');
+                if (btnOrder) btnOrder.textContent = `Order Now - £${price}/mo`;
+            }
+            if (type) {
+                const badge = document.querySelector('section .badge-intro');
+                if (badge) badge.textContent = type;
+            }
         });
     </script>
 </body>

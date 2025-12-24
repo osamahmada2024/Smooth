@@ -4,46 +4,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | LINGsCARS</title>
+    <title>About Us | LING's</title>
+    <meta name="description" content="Meet the LINGsCARS team. The UK's most trusted car leasing company.">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body data-theme="dark">
-    <nav class="nav-shell scrolled" id="main-nav">
-        <div class="container nav-body">
-            <a href="index.html" class="nav-brand">
-                <div class="brand-dot"></div>
-                LINGsCARS
+    <div id="custom-cursor"></div>
+
+    <!-- Glass Orbs Background -->
+    <div class="glass-orb"
+        style="top: -10%; left: -10%; width: 80vw; height: 80vh; background: var(--clr-primary); opacity: 0.05;"></div>
+    <div class="glass-orb"
+        style="top: 20%; right: -20%; width: 60vw; height: 60vh; background: var(--clr-accent); opacity: 0.03;"></div>
+    <div class="glass-orb"
+        style="bottom: -20%; left: 10%; width: 70vw; height: 70vh; background: var(--clr-primary); opacity: 0.02;">
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- Mobile Menu Panel -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="nav-brand">LINGsCARS</a>
+            <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li><a href="car-leasing.html" class="mobile-nav-link">Car Leasing</a></li>
+            <li><a href="vans.html" class="mobile-nav-link">Van Leasing</a></li>
+            <li><a href="manufacturers.html" class="mobile-nav-link">Manufacturers</a></li>
+            <li><a href="about.html" class="mobile-nav-link active">About Us</a></li>
+            <li><a href="account.html" class="mobile-nav-link">Your Account</a></li>
+        </ul>
+        <div class="mobile-contact">
+            <a href="tel:+441914609444" class="mobile-phone-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                0191 460 9444
             </a>
-            <div class="nav-items">
-                <a href="personal.html" class="nav-link">Personal</a>
-                <a href="business.html" class="nav-link">Business</a>
+            <a href="mailto:sales@lingscars.com" class="mobile-email-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Email Us
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="nav-shell" id="main-nav">
+        <div class="nav-body">
+            <a href="index.html" class="nav-brand">LINGsCARS</a>
+            <div class="nav-center">
+                <a href="car-leasing.html" class="nav-link">Cars</a>
                 <a href="vans.html" class="nav-link">Vans</a>
-                <a href="bmw.html" class="nav-link">BMW</a>
+                <a href="manufacturers.html" class="nav-link">Brands</a>
+                <a href="about.html" class="nav-link active">About</a>
             </div>
-            <div class="nav-interaction" style="display: flex; align-items: center; gap: var(--space-5);">
-                <button id="theme-toggle" class="nav-link"
-                    style="background: none; border: 1px solid rgba(255,255,255,0.2); padding: var(--space-1) var(--space-3); border-radius: 100px; cursor: pointer; color: var(--clr-text-main); font-size: 1.2rem; transition: var(--base-transition);">
-                    <span id="theme-icon">🔆</span>
+            <div class="nav-right">
+                <a href="tel:+441914609444" class="nav-cta-phone">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span>0191 460 9444</span>
+                </a>
+                <a href="account.html" class="nav-account-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <span id="theme-icon">☀</span>
                 </button>
-                <a href="tel:01914609444" class="nav-link" style="color: var(--clr-primary); font-weight: 800;">0191 460
-                    9444</a>
             </div>
         </div>
     </nav>
-    <main style="padding: var(--space-21) 0;">
-        <div class="container reveal active">
-            <h1>The <br><span style="color: var(--clr-primary)">Ling Narrative</span></h1>
-            <p style="margin-top: var(--space-8); font-size: 1.5rem; max-width: 800px;">We are the UK's most
-                transparent, aggressive, and efficient car leasing engine. Founded by the legendary Ling Valentine,
-                we've broken every rule of boring corporate car sales.</p>
-        </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="category-hero">
+            <div class="hero-overlay"></div>
+            <img src="images/car_30.jpg" alt="About LINGsCARS" class="hero-media">
+            <div class="container hero-text-content">
+                <span class="badge-intro">Est. 2004</span>
+                <h1 class="reveal">About <span style="font-size: 0.7em;">LINGsCARS</span></h1>
+                <p class="reveal">We are LING's - you can trust us! The UK's favorite car leasing company
+                    with a commitment to transparency and great prices.</p>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="trust-mega"
+            style="padding: var(--space-21) 0; background: var(--clr-surface-2); border-top: var(--border-thin); border-bottom: var(--border-thin);">
+            <div class="container">
+                <div
+                    style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-13); text-align: center;">
+                    <div class="reveal">
+                        <div style="font-size: 4rem; font-weight: 900; color: var(--clr-primary);">120k+</div>
+                        <div class="input-label">Cars Delivered</div>
+                    </div>
+                    <div class="reveal">
+                        <div style="font-size: 4rem; font-weight: 900; color: var(--clr-primary);">55%</div>
+                        <div class="input-label">Return Customers</div>
+                    </div>
+                    <div class="reveal">
+                        <div style="font-size: 4rem; font-weight: 900; color: var(--clr-primary);">4.9★</div>
+                        <div class="input-label">Trustpilot Rating</div>
+                    </div>
+                    <div class="reveal">
+                        <div style="font-size: 4rem; font-weight: 900; color: var(--clr-primary);">20+</div>
+                        <div class="input-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" style="padding: var(--space-21) 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: var(--space-13);">
+                    <h2>Meet The <span class="font-decorative">Team</span></h2>
+                    <p>The people behind LINGsCARS</p>
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-8);">
+                    <!-- Ling -->
+                    <div class="feature-pill reveal" style="text-align: center; padding: var(--space-13);">
+                        <div
+                            style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent)); border-radius: 50%; margin: 0 auto var(--space-5); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">
+                            LV</div>
+                        <h3>Ling Valentine</h3>
+                        <p style="color: var(--clr-primary); font-weight: 600; margin-bottom: var(--space-3);">Founder &
+                            CEO</p>
+                        <p style="font-size: 0.9rem;">UK's car leasing queen! Born in China, Ling founded LINGsCARS and
+                            built it into Britain's biggest individual seller of new cars. Featured on Dragons' Den.</p>
+                    </div>
+
+                    <!-- Lily -->
+                    <div class="feature-pill reveal" style="text-align: center; padding: var(--space-13);">
+                        <div
+                            style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent)); border-radius: 50%; margin: 0 auto var(--space-5); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">
+                            LY</div>
+                        <h3>Lily</h3>
+                        <p style="color: var(--clr-primary); font-weight: 600; margin-bottom: var(--space-3);">
+                            "Nice-nails" - Car Proposals</p>
+                        <p style="font-size: 0.9rem;">Born in Nottinghamshire, Lily is a professional singer who sounds
+                            like Amy Winehouse. She joined the team in 2015 and is a dinosaur expert!</p>
+                    </div>
+
+                    <!-- Guy -->
+                    <div class="feature-pill reveal" style="text-align: center; padding: var(--space-13);">
+                        <div
+                            style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent)); border-radius: 50%; margin: 0 auto var(--space-5); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">
+                            GM</div>
+                        <h3>Guy McAulay</h3>
+                        <p style="color: var(--clr-primary); font-weight: 600; margin-bottom: var(--space-3);">
+                            "McMiserable" - Admin & Delivery</p>
+                        <p style="font-size: 0.9rem;">Scottish and proud! Guy runs the admin department from signed
+                            orders to car delivery. His demeanor grinds dealers into submission.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews"
+            style="padding: var(--space-21) 0; background: var(--clr-surface-2); border-top: var(--border-thin);">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: var(--space-13);">
+                    <h2>Customer <span class="font-decorative">Reviews</span></h2>
+                    <div
+                        style="display: flex; align-items: center; justify-content: center; gap: var(--space-5); margin-top: var(--space-5); flex-wrap: wrap;">
+                        <span style="color: #00b67a; font-size: 1.5rem;">★★★★★</span>
+                        <span style="font-weight: 700;">Exceptional - 5 out of 5</span>
+                        <span style="color: var(--clr-text-muted);">(219 reviews)</span>
+                    </div>
+                </div>
+
+                <div class="faq-nexus reveal">
+                    <div class="faq-item">
+                        <h3 style="color: #00b67a;">★★★★★ Outstanding</h3>
+                        <p>"The Lings team are incredible. They are extremely helpful, knowledgeable and friendly. No
+                            question is too stupid and their responses are very quick."</p>
+                        <p style="font-size: 0.8rem; color: var(--clr-text-dim); margin-top: var(--space-3);">Trusted
+                            Customer • 2 weeks ago</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 style="color: #00b67a;">★★★★★ Best leasing company ever</h3>
+                        <p>"This is my 3rd consecutive lease with LingsCARS. I have always found them to be well priced
+                            and human to talk to. You'll be well looked after."</p>
+                        <p style="font-size: 0.8rem; color: var(--clr-text-dim); margin-top: var(--space-3);">Ben Hall •
+                            3 weeks ago</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 style="color: #00b67a;">★★★★★ Another good transaction</h3>
+                        <p>"Lilly was just so efficient and helpful sitting the right fit car for me. No question is a
+                            problem and responses are always quick."</p>
+                        <p style="font-size: 0.8rem; color: var(--clr-text-dim); margin-top: var(--space-3);">Trusted
+                            Customer • 3 weeks ago</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 style="color: #00b67a;">★★★★★ Thank you LINGsCARS!</h3>
+                        <p>"Lily was amazing. So warm and humorous which made the whole process much easier. Won't use
+                            anyone else!"</p>
+                        <p style="font-size: 0.8rem; color: var(--clr-text-dim); margin-top: var(--space-3);">Trusted
+                            Customer • 3 weeks ago</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" style="padding: var(--space-21) 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: var(--space-13);">
+                    <h2>Knowledge <span class="font-decorative">Nexus</span></h2>
+                    <p>Frequently asked questions</p>
+                </div>
+                <div class="faq-nexus reveal">
+                    <div class="faq-item">
+                        <h3>What is the lead time for new orders?</h3>
+                        <p>Most "In Stock" vehicles are dispatched within 14 days, while custom builds range from 3 to 6
+                            months depending on specification.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How does pricing work?</h3>
+                        <p>We operate on a transparency model. The price you see is the price. No hidden fees. No
+                            middleman markups.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What happens at the end of the lease?</h3>
+                        <p>Simply hand back the keys or upgrade to the latest model. Our inspectors use
+                            industry-standard fair wear and tear guidelines.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is insurance included?</h3>
+                        <p>Standard leasing covers the vehicle, road tax, and delivery. Insurance is typically the
+                            driver's responsibility.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer class="footer-v2">
+
+    <!-- Footer -->
+    <footer id="contact" class="footer-v2">
         <div class="container">
-            <p style="text-align: center;">© 2025 LINGsCARS.com LTD</p>
+            <div class="footer-grid">
+                <div>
+                    <h3 style="margin-bottom: var(--space-5);">LINGsCARS</h3>
+                    <p style="font-size: 0.9rem;">The UK's favorite car leasing company.</p>
+                    <div style="margin-top: var(--space-5);">
+                        <div class="input-label">Direct Contact</div>
+                        <a href="tel:01914609444"
+                            style="font-size: 1.25rem; font-weight: 800; color: var(--clr-text-main);">0191 460 9444</a>
+                    </div>
+                </div>
+                <div>
+                    <span class="input-label">Access</span>
+                    <a href="car-leasing.html" class="f-link">Car Leasing Deals</a>
+                    <a href="vans.html" class="f-link">Van Leasing Deals</a>
+                    <a href="manufacturers.html" class="f-link">Manufacturers</a>
+                </div>
+                <div>
+                    <span class="input-label">Information</span>
+                    <a href="#" class="f-link">Privacy Policy</a>
+                    <a href="#" class="f-link">Terms & Conditions</a>
+                </div>
+                <div>
+                    <span class="input-label">Compliance</span>
+                    <p style="font-size: 0.8rem;">FCA Number: 721481</p>
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem;">Company: 06178634</p>
+                </div>
+            </div>
+            <div style="margin-top: var(--space-13); padding-top: var(--space-5); border-top: var(--border-thin);">
+                <p style="font-size: 0.75rem; color: var(--clr-text-dim); text-align: center;">
+                    © 2004-2025 LINGsCARS.com Limited. All rights reserved.
+                </p>
+            </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
